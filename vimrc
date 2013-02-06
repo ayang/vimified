@@ -28,7 +28,7 @@ endif
 " Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
 endif
 " }}}
 
@@ -55,6 +55,8 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
+    let g:SuperTabDefaultCompletionType = "context"
+    Bundle 'ervandew/supertab'
     Bundle 'maxbrunsfeld/vim-yankstack'
     Bundle 'tpope/vim-eunuch'
 
@@ -134,6 +136,12 @@ if count(g:vimified_packages, 'coding')
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+endif
+" }}}
+
+" _. Python {{{
+if count(g:vimified_packages, 'python')
+    Bundle 'jmcantrell/vim-virtualenv'
 endif
 " }}}
 
@@ -364,6 +372,10 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jp
 set wildmenu
 
 set dictionary=/usr/share/dict/words
+
+" Disable input method in normal mode.
+set noimd
+
 " }}}
 
 " Triggers {{{
@@ -511,8 +523,8 @@ nnoremap <leader>et <C-w>s<C-w>j:e ~/.tmux.conf<cr>
 " --------------------
 
 set ofu=syntaxcomplete#Complete
-let g:rubycomplete_buffer_loading = 0
-let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_buffer_loading = -1
+let g:rubycomplete_classes_in_global = 0
 
 " showmarks
 let g:showmarks_enable = 1
