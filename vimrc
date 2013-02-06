@@ -87,14 +87,9 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-<<<<<<< HEAD
-    Bundle 'Lokaltog/vim-powerline'
-=======
-    "Bundle 'Lokaltog/vim-powerline'
     Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
     let g:Powerline_symbols = 'fancy'
     let g:Powerline_cache_enabled = 1
->>>>>>> improved powerline bundle and added objective-c support.
 endif
 " }}}
 
