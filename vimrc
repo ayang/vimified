@@ -4,7 +4,7 @@
 "
 " Have fun!
 "
-
+"
 set nocompatible
 filetype off
 
@@ -33,7 +33,8 @@ endif
 " }}}
 
 " VUNDLE {{{
-set rtp+=~/.vim/bundle/vundle/
+let s:bundle_path=$HOME."/.vim/bundle/"
+execute "set rtp+=".s:bundle_path."vundle/"
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
@@ -41,10 +42,19 @@ Bundle 'gmarik/vundle'
 
 " PACKAGES {{{
 
+" Install user-supplied Bundles {{{
+let s:extrarc = expand($HOME . '/.vim/extra.vimrc')
+if filereadable(s:extrarc)
+    exec ':so ' . s:extrarc
+endif
+" }}}
+
 " _. General {{{
 if count(g:vimified_packages, 'general')
-    Bundle "mileszs/ack.vim"
-    nnoremap <leader>a :Ack!<space>
+    Bundle 'editorconfig/editorconfig-vim'
+
+    Bundle 'rking/ag.vim'
+    nnoremap <leader>a :Ag<space>
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
@@ -61,10 +71,13 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-n> :NERDTreeToggle<CR>
+    nmap <C-i> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
+    " Keep NERDTree window fixed between multiple toggles
+    set winfixwidth
+
 
     Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
@@ -78,18 +91,35 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
+    let g:ctrlp_working_path_mode = ''
+
     Bundle 'vim-scripts/scratch.vim'
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
+
+    Bundle 'terryma/vim-multiple-cursors'
 endif
 " }}}
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-    let g:Powerline_symbols = 'fancy'
-    let g:Powerline_cache_enabled = 1
+    Bundle 'bling/vim-airline'
+    let g:airline_left_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_branch_prefix = ''
+endif
+" }}}
+
+" _. Indent {{{
+if count(g:vimified_packages, 'indent')
+  Bundle 'Yggdroot/indentLine'
+  set list lcs=tab:\|\
+  let g:indentLine_color_term = 111
+  let g:indentLine_color_gui = '#DADADA'
+  let g:indentLine_char = 'c'
+  "let g:indentLine_char = '∙▹¦'
+  let g:indentLine_char = '∙'
 endif
 " }}}
 
@@ -129,9 +159,11 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'js'], 'passive_filetypes': ['html', 'css', 'slim'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
+
+    Bundle 'vim-scripts/Reindent'
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
@@ -140,7 +172,11 @@ endif
 
 " _. Python {{{
 if count(g:vimified_packages, 'python')
+    Bundle 'klen/python-mode'
     Bundle 'jmcantrell/vim-virtualenv'
+    Bundle 'python.vim'
+    Bundle 'python_match.vim'
+    Bundle 'pythoncomplete'
 endif
 " }}}
 
@@ -157,6 +193,13 @@ if count(g:vimified_packages, 'ruby')
 endif
 " }}}
 
+" _. Clang {{{
+if count(g:vimified_packages, 'clang')
+    Bundle 'LucHermitte/vim-clang'
+    Bundle 'vim-scripts/c.vim'
+endif
+" }}}
+
 " _. HTML {{{
 if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-haml'
@@ -164,7 +207,6 @@ if count(g:vimified_packages, 'html')
     Bundle 'tpope/vim-markdown'
     Bundle 'digitaltoad/vim-jade'
     Bundle 'slim-template/vim-slim'
-    Bundle 'tristen/vim-sparkup'
 
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
@@ -175,6 +217,8 @@ endif
 " _. CSS {{{
 if count(g:vimified_packages, 'css')
     Bundle 'wavded/vim-stylus'
+    Bundle 'lunaru/vim-less'
+    nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 endif
 " }}}
 
@@ -192,7 +236,7 @@ endif
 " _. Clojure {{{
 if count(g:vimified_packages, 'clojure')
     Bundle 'guns/vim-clojure-static'
-    Bundle 'tpope/vim-foreplay'
+    Bundle 'tpope/vim-fireplace'
     Bundle 'tpope/vim-classpath'
 endif
 " }}}
@@ -209,9 +253,9 @@ if count(g:vimified_packages, 'haskell')
 endif
 " }}}
 
-" _. Objective-C {{{
-if count(g:vimified_packages, 'objc')
-    Bundle 'Rip-Rip/clang_complete'
+" _. Elixir {{{
+if count(g:vimified_packages, 'elixir')
+    Bundle 'elixir-lang/vim-elixir'
 endif
 " }}}
 
@@ -222,6 +266,18 @@ if count(g:vimified_packages, 'color')
     Bundle 'tomasr/molokai'
     Bundle 'zaiste/Atom'
     Bundle 'w0ng/vim-hybrid'
+    Bundle 'chriskempson/base16-vim'
+    Bundle 'Elive/vim-colorscheme-elive'
+    Bundle 'zeis/vim-kolor'
+
+    " During installation the molokai colorscheme might not be avalable
+    if filereadable(globpath(&rtp, 'colors/molokai.vim'))
+      colorscheme molokai
+    else
+      colorscheme default
+    endif
+else
+    colorscheme default
 endif
 " }}}
 
@@ -229,11 +285,11 @@ endif
 
 " General {{{
 filetype plugin indent on
-colorscheme hybrid
+
 syntax on
 
 " Set 5 lines to the cursor - when moving vertically
-set scrolloff=5
+set scrolloff=0
 
 " It defines where to look for the buffer user demanding (current window, all
 " windows in other tabs, or nowhere, i.e. open file from scratch every time) and
@@ -267,7 +323,7 @@ nnoremap <leader>po "*p
 noremap <silent><Leader>/ :nohls<CR>
 
 " better ESC
-inoremap jk <Esc>
+inoremap <C-k> <Esc>
 
 nmap <silent> <leader>hh :set invhlsearch<CR>
 nmap <silent> <leader>ll :set invlist<CR>
@@ -318,7 +374,7 @@ set nolazyredraw
 " Disable the macvim toolbar
 set guioptions-=T
 
-set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
+set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
 
 set notimeout
@@ -326,10 +382,12 @@ set ttimeout
 set ttimeoutlen=10
 
 " _ backups {{{
-set undodir=~/.vim/tmp/undo//     " undo files
-set undofile
-set undolevels=3000
-set undoreload=10000
+if has('persistent_undo')
+  set undodir=~/.vim/tmp/undo//     " undo files
+  set undofile
+  set undolevels=3000
+  set undoreload=10000
+endif
 set backupdir=~/.vim/tmp/backup// " backups
 set directory=~/.vim/tmp/swap//   " swap files
 set backup
@@ -338,8 +396,11 @@ set noswapfile
 
 set modelines=0
 set noeol
-set relativenumber
-set numberwidth=10
+if exists('+relativenumber')
+  set relativenumber
+endif
+set numberwidth=3
+set winwidth=83
 set ruler
 if executable('/bin/zsh')
   set shell=/bin/zsh
@@ -362,7 +423,9 @@ set shiftwidth=4
 set expandtab
 set wrap
 set formatoptions=qrn1
-set colorcolumn=+1
+if exists('+colorcolumn')
+  set colorcolumn=+1
+endif
 " }}}
 
 set visualbell
@@ -402,8 +465,8 @@ augroup END
 " Only shown when not in insert mode so I don't go insane.
 augroup trailing
     au!
-    au InsertEnter * :set listchars-=trail:⌴
-    au InsertLeave * :set listchars+=trail:⌴
+    au InsertEnter * :set listchars-=trail:␣
+    au InsertLeave * :set listchars+=trail:␣
 augroup END
 
 " Remove trailing whitespaces when saving

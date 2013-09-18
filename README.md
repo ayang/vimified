@@ -53,6 +53,11 @@ You can overwrite default configuration and key bindings by using one of followi
 
 `~/.vim/before.vimrc` will be loaded before everything else.
 
+`~/.vim/extra.vimrc` will be loaded after Vundle is initialized and before
+Vimified settings take place. The idea was so people could add Bundle lines
+without having to worry about conflicts in vimrc when pulling. [Read
+More](https://github.com/zaiste/vimified/pull/27).
+
 `~/.vim/after.vimrc` will be loaded after all configuration options are set. This is best place to change vimified default behaviour (keybindings) and/or color scheme.
 
 Packages
@@ -68,6 +73,7 @@ Avaible packages:
 
  * general
  * fancy
+ * indent
  * os
  * coding
  * ruby
@@ -76,13 +82,19 @@ Avaible packages:
  * js
  * clojure
  * haskell
+ * elixir
  * color
 
 ### General
 
-#### [ack.vim](http://github.com/mileszs/ack.vim)
+#### [EditorConfig](https://github.com/editorconfig/editorconfig-vim)
 
-Vim plugin for the Perl module / CLI script 'ack'.
+[EditorConfig](http://editorconfig.org) plugin for Vim.
+
+#### [ag.vim](https://github.com/rking/ag.vim)
+
+Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
+/ CLI script 'ack'
 
 **Command**: `,a`
 
@@ -158,15 +170,25 @@ Fuzzy file, buffer, mru and tag finder.
 
 Plugin to create and use a scratch Vim buffer.
 
-#### [troydm/easybuffer.vim](https://github.com/troydm/easybuffer.vim)
+#### [easybuffer.vim](https://github.com/troydm/easybuffer.vim)
 
 easybuffer.vim - vim plugin to quickly switch between buffers
 
+#### [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
+
+True Sublime Text style multiple selections for Vim
+
 ### Fancy
 
-#### [powerline](https://github.com/Lokaltog/vim-powerline)
+#### [vim-airline](https://github.com/bling/vim-airline)
 
-The ultimate vim statusline utility.
+lean & mean statusline for vim that's light as air
+
+### Indent
+
+#### [indentLine](https://github.com/Yggdroot/indentLine)
+
+A vim plugin to display the indention levels with thin vertical lines (or: any char you like).
 
 ### OS
 
@@ -286,13 +308,47 @@ A filetype, syntax and indent plugin for Clojure.
 
 ### Haskell
 
-[vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
+#### [vim-syntax-haskell-cabal](https://github.com/Twinside/vim-syntax-haskell-cabal)
 
 Syntax file for Haskell's cabal syntax file
 
 #### [haskellmode-vim](https://github.com/lukerandall/haskellmode-vim)
 
 An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
+
+### Elixir
+
+#### [vim-elixir](https://github.com/elixir-lang/vim-elixir)
+
+Vim configuration files for Elixir.
+
+### Python
+
+#### [python-mode](https://github.com/klen/python-mode)
+
+Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
+
+pyflakes, pep8, mccabe libraries in vim to provide features like python code
+
+looking for bugs, refactoring and some other useful things.
+
+####
+
+#### Clang
+
+#### [vim-clang](https://github.com/LucHermitte/vim-clang)
+
+Module to Interact with libclang (and clang_indexer DB) from Vim.
+
+#### [vim-scripts/c.vim](https://github.com/vim-scripts/c.vim)
+
+   Statement oriented editing of  C / C++ programs
+
+   Speed up writing new code considerably.
+
+   Write code und comments with a professional appearance from the beginning.
+
+   Use code snippets
 
 ####
 
@@ -302,8 +358,7 @@ An unpacked copy of the haskellmode vimball. Ping me if it needs updating.
 
 A Vim color scheme.
 
-####
-[vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
+#### [vim-colors-solarized](https://github.com/altercation/vim-colors-solarized)
 
 precision colorscheme for the vim text editor
 
