@@ -6,7 +6,12 @@
 "
 "
 set nocompatible
+filetype on
 filetype off
+
+" Utils {{{
+source ~/.vim/functions/util.vim
+" }}}
 
 " Load external configuration before anything else {{{
 if filereadable(expand("~/.vim/before.vimrc"))
@@ -54,7 +59,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
     Bundle 'rking/ag.vim'
-    nnoremap <leader>a :Ag<space>
+    nnoremap <leader>a :Ag -i<space>
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
@@ -104,10 +109,11 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
+    call g:check_defined('g:airline_left_sep', '')
+    call g:check_defined('g:airline_right_sep', '')
+    call g:check_defined('g:airline_branch_prefix', '')
+
     Bundle 'bling/vim-airline'
-    let g:airline_left_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_branch_prefix = ''
 endif
 " }}}
 
@@ -400,8 +406,8 @@ endif
 set numberwidth=3
 set winwidth=83
 set ruler
-if executable('/bin/zsh')
-  set shell=/bin/zsh
+if executable('zsh')
+  set shell=zsh\ -l
 endif
 set showcmd
 
