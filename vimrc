@@ -143,6 +143,7 @@ endif
 " _. Coding {{{
 
 if count(g:vimified_packages, 'coding')
+    Bundle 'Townk/vim-autoclose'
     Bundle 'majutsushi/tagbar'
     nmap <leader>t :TagbarToggle<CR>
 
@@ -170,9 +171,11 @@ if count(g:vimified_packages, 'coding')
     " --
 
     Bundle 'vim-scripts/Reindent'
+    Bundle 'godlygeek/tabular'
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
+
 endif
 " }}}
 
