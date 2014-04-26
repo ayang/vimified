@@ -149,6 +149,8 @@ if count(g:vimified_packages, 'coding')
 
     Bundle 'gregsexton/gitv'
 
+    Bundle 'joonty/vdebug.git'
+
     Bundle 'scrooloose/nerdcommenter'
     nmap <leader># :call NERDComment(0, "invert")<cr>
     vmap <leader># :call NERDComment(0, "invert")<cr>
@@ -202,8 +204,11 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
+    Bundle 'Rip-Rip/clang_complete'
+    Bundle 'LucHermitte/clang_indexer'
+    Bundle 'newclear/lh-vim-lib'
     Bundle 'LucHermitte/vim-clang'
-    Bundle 'vim-scripts/c.vim'
+    Bundle 'devx/c.vim'
 endif
 " }}}
 
