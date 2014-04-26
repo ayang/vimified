@@ -91,6 +91,8 @@ if count(g:vimified_packages, 'general')
     let g:yankring_history_dir = '~/.vim/tmp/'
     nmap <leader>y :YRShow<cr>
 
+    Bundle 'mbbill/undotree'
+
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
@@ -114,6 +116,7 @@ if count(g:vimified_packages, 'fancy')
     call g:check_defined('g:airline_branch_prefix', '')
 
     Bundle 'bling/vim-airline'
+    Bundle 'bling/vim-bufferline'
 endif
 " }}}
 
