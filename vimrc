@@ -179,7 +179,8 @@ if count(g:vimified_packages, 'coding')
 
     Bundle 'Valloric/YouCompleteMe'
     let g:ycm_autoclose_preview_window_after_completion=1
-    nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 
