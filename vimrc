@@ -99,6 +99,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
     let g:ctrlp_working_path_mode = ''
+    let g:ctrlp_custom_ignore = '\v\.(pyc)$'
 
     Bundle 'vim-scripts/scratch.vim'
 
