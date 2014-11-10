@@ -70,8 +70,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    let g:SuperTabDefaultCompletionType = "context"
-    Bundle 'ervandew/supertab'
     Bundle 'maxbrunsfeld/vim-yankstack'
     Bundle 'tpope/vim-eunuch'
 
@@ -179,6 +177,9 @@ if count(g:vimified_packages, 'coding')
     Bundle 'vim-scripts/Reindent'
     Bundle 'godlygeek/tabular'
 
+    Bundle 'Valloric/YouCompleteMe'
+    let g:ycm_autoclose_preview_window_after_completion=1
+    nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 
@@ -189,7 +190,6 @@ endif
 if count(g:vimified_packages, 'python')
     Bundle 'python.vim'
     Bundle 'python_match.vim'
-    Bundle 'davidhalter/jedi-vim'
 endif
 " }}}
 
@@ -208,7 +208,6 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
-    Bundle 'Rip-Rip/clang_complete'
     Bundle 'LucHermitte/clang_indexer'
     Bundle 'newclear/lh-vim-lib'
     Bundle 'LucHermitte/vim-clang'
