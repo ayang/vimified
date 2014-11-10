@@ -98,6 +98,10 @@ if count(g:vimified_packages, 'general')
     Bundle 'kien/ctrlp.vim'
     let g:ctrlp_working_path_mode = ''
     let g:ctrlp_custom_ignore = '\v\.(pyc)$'
+    Bundle 'tacahiroy/ctrlp-funky'
+    nmap <leader>pb :CtrlPBuffer
+    nmap <leader>pm :CtrlPMRU
+    nmap <leader>pf :CtrlPFunky
 
     Bundle 'vim-scripts/scratch.vim'
 
@@ -166,6 +170,8 @@ if count(g:vimified_packages, 'coding')
     nmap <leader>f :let @/="\\<<C-R><C-W>\\>"<CR>:set hls<CR>:silent Ggrep -w "<C-R><C-W>"<CR>:ccl<CR>:cw<CR><CR>
     " same in visual mode
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
+
+    Plugin 'airblade/vim-gitgutter'
 
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
@@ -320,13 +326,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 " }}}
 
 " Mappings {{{
-
-" You want to be part of the gurus? Time to get in serious stuff and stop using
-" arrow keys.
-noremap <left> <nop>
-noremap <up> <nop>
-noremap <down> <nop>
-noremap <right> <nop>
 
 " Yank from current cursor position to end of line
 map Y y$
@@ -592,11 +591,11 @@ nnoremap <leader>z zMzvzz
 
 " Quick editing {{{
 
-nnoremap <leader>ev <C-w>s<C-w>j:e $MYVIMRC<cr>
-nnoremap <leader>es <C-w>s<C-w>j:e ~/.vim/snippets/<cr>
-nnoremap <leader>eg <C-w>s<C-w>j:e ~/.gitconfig<cr>
-nnoremap <leader>ez <C-w>s<C-w>j:e ~/.zshrc<cr>
-nnoremap <leader>et <C-w>s<C-w>j:e ~/.tmux.conf<cr>
+nnoremap <leader>ev :e $MYVIMRC<cr>
+nnoremap <leader>es :e ~/.vim/snippets/<cr>
+nnoremap <leader>eg :e ~/.gitconfig<cr>
+nnoremap <leader>ez :e ~/.zshrc<cr>
+nnoremap <leader>et :e ~/.tmux.conf<cr>
 
 " --------------------
 
