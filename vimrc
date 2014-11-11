@@ -58,10 +58,10 @@ endif
 if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
-    Bundle 'matthias-guenther/hammer.vim'
     Bundle 'rking/ag.vim'
     nnoremap <leader>a :Ag -i<space>
 
+    Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
     Bundle 'mileszs/ack.vim'
     Bundle 'tsaleh/vim-align'
