@@ -99,9 +99,9 @@ if count(g:vimified_packages, 'general')
     let g:ctrlp_working_path_mode = ''
     let g:ctrlp_custom_ignore = '\v\.(pyc)$'
     Bundle 'tacahiroy/ctrlp-funky'
-    nmap <leader>pb :CtrlPBuffer
-    nmap <leader>pm :CtrlPMRU
-    nmap <leader>pf :CtrlPFunky
+    nmap <leader>pb :CtrlPBuffer<CR>
+    nmap <leader>pm :CtrlPMRU<CR>
+    nmap <leader>pf :CtrlPFunky<CR>
 
     Bundle 'vim-scripts/scratch.vim'
 
@@ -185,6 +185,12 @@ if count(g:vimified_packages, 'coding')
 
     Bundle 'Valloric/YouCompleteMe'
     let g:ycm_autoclose_preview_window_after_completion=1
+    let g:ycm_min_num_of_chars_for_completion = 5
+
+    " Fix bug in insert mode when click up and down key
+    let g:ycm_key_list_select_completion = ['<TAB>']
+    let g:ycm_key_list_previous_completion = ['<S-TAB>']
+
     nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
     autocmd FileType gitcommit set tw=68 spell
@@ -339,6 +345,7 @@ noremap <silent><Leader>/ :nohls<CR>
 
 " better ESC
 inoremap <C-k> <Esc>
+inoremap jj <Esc>
 
 nmap <silent> <leader>hh :set invhlsearch<CR>
 nmap <silent> <leader>ll :set invlist<CR>
@@ -349,9 +356,11 @@ nmap <silent> <leader>ii :set invrelativenumber<CR>
 " Seriously, guys. It's not like :W is bound to anything anyway.
 command! W :w
 
-" Emacs bindings in command line mode
+" Emacs bindings in command line mode and insert mode
 cnoremap <c-a> <home>
 cnoremap <c-e> <end>
+inoremap <c-a> <home>
+inoremap <c-e> <end>
 
 " Source current line
 vnoremap <leader>L y:execute @@<cr>
@@ -375,7 +384,7 @@ set autoread
 set backspace=indent,eol,start
 set binary
 set cinoptions=:0,(s,u0,U1,g0,t0
-set completeopt=menuone,preview
+set completeopt=longest,menuone
 set encoding=utf-8
 set hidden
 set history=1000
@@ -426,8 +435,6 @@ set exrc
 set secure
 
 set matchtime=2
-
-set completeopt=longest,menuone,preview
 
 " White characters {{{
 set autoindent
