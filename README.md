@@ -1,7 +1,8 @@
 vimified
 ========
 
-> Frankly, my dear, you're gonna be vimified one day!
+> This vim configuration is forked from zaiste's, and enhanced clang and python
+> support.
 
 Kick-ass Vim configuration framework, built on top of *awesome* [Vundle](https://github.com/gmarik/vundle).
 
@@ -14,14 +15,14 @@ How to install
 
 Copy/Paste this line in your CLI:
 
-    curl -L https://raw.github.com/zaiste/vimified/master/install.sh | sh
+    curl -L https://raw.github.com/ayang/vimified/master/install.sh | sh
 
 ### For those who actually care about what is done
 
 Grab the project:
 
     cd
-    git clone git://github.com/zaiste/vimified.git
+    git clone git://github.com/ayang/vimified.git
     ln -sfn vimified ~/.vim
     ln -sfn vimified/vimrc ~/.vimrc
     cd vimified
@@ -43,6 +44,14 @@ want to use:
 Install plugins:
 
     vim +BundleInstall +qall
+
+### Some modules need install manualy, they are:
+
+* ack
+* YouCompleteMe
+* hammer.vim
+
+Their install guilds can be found on their github projects.
 
 Enjoy!
 
@@ -76,6 +85,8 @@ Avaible packages:
  * indent
  * os
  * coding
+ * python
+ * clang
  * ruby
  * html
  * css
@@ -103,6 +114,10 @@ Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
 vim, your markup language of choice, and your browser of choice.
 
 **Command**: `,p`
+
+#### [ack](https://github.com/mileszs/ack.vim)
+
+Search in files, need perl and ack installed.
 
 #### [vim-align](https://github.com/tsaleh/vim-align)
 
@@ -230,6 +245,10 @@ fugitive.vim: a Git wrapper so awesome, it should be illegal
 
 Syntax checking hacks for vim
 
+#### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
+
+Greate plugin for code complete and jump to defination, supports clang and python
+
 ### Ruby
 
 #### [vim-ruby](https://github.com/vim-ruby/vim-ruby)
@@ -331,8 +350,6 @@ Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
 pyflakes, pep8, mccabe libraries in vim to provide features like python code
 
 looking for bugs, refactoring and some other useful things.
-
-####
 
 #### Clang
 
