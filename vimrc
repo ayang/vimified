@@ -114,9 +114,9 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    call g:check_defined('g:airline_left_sep', '')
-    call g:check_defined('g:airline_right_sep', '')
-    call g:check_defined('g:airline_branch_prefix', '')
+    call g:Check_defined('g:airline_left_sep', '')
+    call g:Check_defined('g:airline_right_sep', '')
+    call g:Check_defined('g:airline_branch_prefix', '')
 
     Bundle 'bling/vim-airline'
     Bundle 'bling/vim-bufferline'
@@ -176,7 +176,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby'], 'passive_filetypes': ['html', 'css', 'slim'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
 
@@ -203,6 +203,14 @@ endif
 if count(g:vimified_packages, 'python')
     Bundle 'python.vim'
     Bundle 'python_match.vim'
+    Bundle 'jmcantrell/vim-virtualenv'
+endif
+" }}}
+
+" _. Go {{{
+if count(g:vimified_packages, 'go')
+    Bundle 'fatih/vim-go'
+    let g:go_disable_autoinstall = 1
 endif
 " }}}
 
@@ -284,6 +292,12 @@ endif
 " _. Elixir {{{
 if count(g:vimified_packages, 'elixir')
     Bundle 'elixir-lang/vim-elixir'
+endif
+" }}}
+
+" _. Rust {{{
+if count(g:vimified_packages, 'rust')
+    Bundle 'wting/rust.vim'
 endif
 " }}}
 
