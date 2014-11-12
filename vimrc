@@ -107,8 +107,6 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
-
-    Bundle 'terryma/vim-multiple-cursors'
 endif
 " }}}
 
@@ -130,7 +128,7 @@ if count(g:vimified_packages, 'indent')
   let g:indentLine_color_term = 111
   let g:indentLine_color_gui = '#DADADA'
   let g:indentLine_char = 'c'
-  "let g:indentLine_char = '∙▹¦'
+  let g:indentLine_char = '∙▹¦'
   let g:indentLine_char = '∙'
 endif
 " }}}
@@ -469,7 +467,7 @@ endif
 
 set visualbell
 
-set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
+set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.pyc,*.pyo,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
 set wildmenu
 
 set dictionary=/usr/share/dict/words
@@ -531,9 +529,6 @@ set hlsearch
 
 " clear search matching
 noremap <leader><space> :noh<cr>:call clearmatches()<cr>
-
-" Don't jump when using * for search
-nnoremap * *<c-o>
 
 " Keep search matches in the middle of the window.
 nnoremap n nzzzv
