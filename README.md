@@ -9,6 +9,8 @@ Kick-ass Vim configuration framework, built on top of *awesome* [Vundle](https:/
 
 ## How to install
 
+**First of all, you need to remove your .vim and .vimrc in your home path.**
+
 ### For lazy people
 
 Copy/Paste this line in your CLI:
@@ -44,7 +46,7 @@ Install plugins:
 
 ### Some modules need install manualy, they are:
 
-* ack
+* ag
 * YouCompleteMe
 * hammer.vim
 
@@ -109,10 +111,6 @@ Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
 vim, your markup language of choice, and your browser of choice.
 
 **Command**: `,p`
-
-#### [ack](https://github.com/mileszs/ack.vim)
-
-Search in files, need perl and ack installed.
 
 #### [vim-align](https://github.com/tsaleh/vim-align)
 
