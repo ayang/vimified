@@ -183,15 +183,17 @@ if count(g:vimified_packages, 'coding')
     Bundle 'vim-scripts/Reindent'
     Bundle 'godlygeek/tabular'
 
-    Bundle 'Valloric/YouCompleteMe'
-    let g:ycm_autoclose_preview_window_after_completion=1
-    let g:ycm_min_num_of_chars_for_completion = 5
+    if exists("g:no_ycm") && !g:no_ycm
+        Bundle 'Valloric/YouCompleteMe'
+        let g:ycm_autoclose_preview_window_after_completion=1
+        let g:ycm_min_num_of_chars_for_completion = 5
 
-    " Fix bug in insert mode when click up and down key
-    let g:ycm_key_list_select_completion = ['<TAB>']
-    let g:ycm_key_list_previous_completion = ['<S-TAB>']
+        " Fix bug in insert mode when click up and down key
+        let g:ycm_key_list_select_completion = ['<TAB>']
+        let g:ycm_key_list_previous_completion = ['<S-TAB>']
 
-    nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+        nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+    endif
 
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
