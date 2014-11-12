@@ -44,7 +44,7 @@ Install plugins:
 
     vim +BundleInstall +qall
 
-### Some modules need install manualy, they are:
+### Some plugins have requirements need install manualy, they are:
 
 * ag
 * YouCompleteMe
@@ -182,10 +182,6 @@ Plugin to create and use a scratch Vim buffer.
 
 easybuffer.vim - vim plugin to quickly switch between buffers
 
-#### [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-
-True Sublime Text style multiple selections for Vim
-
 ### Fancy
 
 #### [vim-airline](https://github.com/bling/vim-airline)
@@ -241,6 +237,8 @@ Syntax checking hacks for vim
 #### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 Greate plugin for code complete and jump to defination, supports clang and python
+
+This plugin needs to install requirements manually, Please read the documents of ycm.
 
 ### Ruby
 
@@ -343,6 +341,10 @@ Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
 pyflakes, pep8, mccabe libraries in vim to provide features like python code
 
 looking for bugs, refactoring and some other useful things.
+
+#### [django.vim](https://github.com/vim-scripts/django.vim)
+
+Django sytax supports
 
 ### Go lang
 
