@@ -73,7 +73,6 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    nmap <C-i> :NERDTreeToggle<CR>
     " Disable the scrollbars (NERDTree)
     set guioptions-=r
     set guioptions-=L
@@ -156,8 +155,6 @@ if count(g:vimified_packages, 'coding')
 
     Bundle 'scrooloose/nerdcommenter'
     let NERDSpaceDelims = 1
-    nmap <leader># :call NERDComment(0, "invert")<cr>
-    vmap <leader># :call NERDComment(0, "invert")<cr>
 
     " - Bundle 'msanders/snipmate.vim'
     Bundle 'sjl/splice.vim'

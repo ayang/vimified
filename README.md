@@ -134,7 +134,8 @@ surround.vim: quoting/parenthesizing made simple
 
 #### [vim-unimpaired](https://github.com/tpope/vim-unimpaired)
 
-unimpaired.vim: pairs of handy bracket mappings
+unimpaired.vim: pairs of handy bracket mappings, very usefull to jump between
+buffers, quickfix list items, etc.
 
 #### [vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
 
@@ -148,7 +149,7 @@ eunuch.vim: helpers for UNIX
 
 A tree explorer plugin for vim.
 
-**Command:** `ctrl-u`
+**Command:** `TAB`
 
 #### [vim-textobj-user](https://github.com/kana/vim-textobj-user)
 
@@ -181,6 +182,8 @@ Plugin to create and use a scratch Vim buffer.
 #### [easybuffer.vim](https://github.com/troydm/easybuffer.vim)
 
 easybuffer.vim - vim plugin to quickly switch between buffers
+
+**Command** `,be`
 
 ### Fancy
 
@@ -220,7 +223,7 @@ gitk for Vim.
 
 Vim plugin for intensely orgasmic commenting.
 
-**Command:** `,#`
+**Command:** `,cl` `,cu`
 
 #### [splice.vim](https://github.com/sjl/splice.vim)
 
