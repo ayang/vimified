@@ -360,10 +360,6 @@ easily. Do not use it with other Go plugins.
 
 ### Clang
 
-#### [vim-clang](https://github.com/LucHermitte/vim-clang)
-
-Module to Interact with libclang (and clang_indexer DB) from Vim.
-
 #### [vim-scripts/c.vim](https://github.com/vim-scripts/c.vim)
 
    Statement oriented editing of  C / C++ programs
