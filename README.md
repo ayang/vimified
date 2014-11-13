@@ -9,6 +9,8 @@ Kick-ass Vim configuration framework, built on top of *awesome* [Vundle](https:/
 
 ## How to install
 
+**First of all, you need to remove your .vim and .vimrc in your home path.**
+
 ### For lazy people
 
 Copy/Paste this line in your CLI:
@@ -42,9 +44,9 @@ Install plugins:
 
     vim +BundleInstall +qall
 
-### Some modules need install manualy, they are:
+### Some plugins have requirements need install manualy, they are:
 
-* ack
+* ag
 * YouCompleteMe
 * hammer.vim
 
@@ -109,10 +111,6 @@ Vim plugin for the_silver_searcher, 'ag', a replacement for the Perl module
 vim, your markup language of choice, and your browser of choice.
 
 **Command**: `,p`
-
-#### [ack](https://github.com/mileszs/ack.vim)
-
-Search in files, need perl and ack installed.
 
 #### [vim-align](https://github.com/tsaleh/vim-align)
 
@@ -184,10 +182,6 @@ Plugin to create and use a scratch Vim buffer.
 
 easybuffer.vim - vim plugin to quickly switch between buffers
 
-#### [vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors)
-
-True Sublime Text style multiple selections for Vim
-
 ### Fancy
 
 #### [vim-airline](https://github.com/bling/vim-airline)
@@ -243,6 +237,8 @@ Syntax checking hacks for vim
 #### [YouCompleteMe](https://github.com/Valloric/YouCompleteMe)
 
 Greate plugin for code complete and jump to defination, supports clang and python
+
+This plugin needs to install requirements manually, Please read the documents of ycm.
 
 ### Ruby
 
@@ -346,6 +342,10 @@ pyflakes, pep8, mccabe libraries in vim to provide features like python code
 
 looking for bugs, refactoring and some other useful things.
 
+#### [django.vim](https://github.com/vim-scripts/django.vim)
+
+Django sytax supports
+
 ### Go lang
 
 Support for go is now available:
@@ -359,10 +359,6 @@ It's highly customizable and has settings for disabling/enabling features
 easily. Do not use it with other Go plugins.
 
 ### Clang
-
-#### [vim-clang](https://github.com/LucHermitte/vim-clang)
-
-Module to Interact with libclang (and clang_indexer DB) from Vim.
 
 #### [vim-scripts/c.vim](https://github.com/vim-scripts/c.vim)
 

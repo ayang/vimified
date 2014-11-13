@@ -33,7 +33,7 @@ endif
 " Use this variable inside your local configuration to declare
 " which package you would like to include
 if ! exists('g:vimified_packages')
-    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'ruby', 'html', 'css', 'js', 'clojure', 'haskell', 'color']
+    let g:vimified_packages = ['general', 'fancy', 'os', 'coding', 'python', 'clang', 'html', 'css', 'js', 'color']
 endif
 " }}}
 
@@ -63,7 +63,6 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
-    Bundle 'mileszs/ack.vim'
     Bundle 'tsaleh/vim-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
@@ -174,7 +173,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
     let g:syntastic_auto_loc_list=1
-    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['ruby', 'python', ], 'passive_filetypes': ['html', 'css', 'slim'] }
+    let g:syntastic_mode_map = { 'mode': 'active', 'active_filetypes': ['c', 'c++', ], 'passive_filetypes': ['html', 'css', 'slim'] }
 
     " --
 
@@ -184,7 +183,8 @@ if count(g:vimified_packages, 'coding')
     if !exists("g:no_ycm") || !g:no_ycm
         Bundle 'Valloric/YouCompleteMe'
         let g:ycm_autoclose_preview_window_after_completion=1
-        let g:ycm_min_num_of_chars_for_completion = 5
+        let g:ycm_min_num_of_chars_for_completion = 3
+        let g:ycm_extra_conf_globlist = ['~/*']
 
         " Fix bug in insert mode when click up and down key
         let g:ycm_key_list_select_completion = ['<TAB>']
@@ -205,6 +205,7 @@ if count(g:vimified_packages, 'python')
     Bundle 'python_match.vim'
     Bundle 'jmcantrell/vim-virtualenv'
     Bundle 'django.vim'
+    autocmd FileType python setlocal ts=4 sw=4 sta et sts=4 ai
 endif
 " }}}
 
@@ -230,9 +231,6 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
-    Bundle 'LucHermitte/clang_indexer'
-    Bundle 'newclear/lh-vim-lib'
-    Bundle 'LucHermitte/vim-clang'
     Bundle 'devx/c.vim'
 endif
 " }}}
