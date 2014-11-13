@@ -157,6 +157,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'joonty/vdebug.git'
 
     Bundle 'scrooloose/nerdcommenter'
+    let NERDSpaceDelims = 1
     nmap <leader># :call NERDComment(0, "invert")<cr>
     vmap <leader># :call NERDComment(0, "invert")<cr>
 
@@ -557,10 +558,6 @@ nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'
 " }}}
 
 " Navigation & UI {{{
-
-" Begining & End of line in Normal mode
-noremap H ^
-noremap L g_
 
 " more natural movement with wrap on
 nnoremap j gj
