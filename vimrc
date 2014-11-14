@@ -59,7 +59,7 @@ if count(g:vimified_packages, 'general')
     Bundle 'editorconfig/editorconfig-vim'
 
     Bundle 'rking/ag.vim'
-    nnoremap <leader>a :Ag -i<space>
+    nnoremap <leader>ag :Ag -i<space>
 
     Bundle 'matthias-guenther/hammer.vim'
     nmap <leader>p :Hammer<cr>
@@ -78,7 +78,7 @@ if count(g:vimified_packages, 'general')
     set guioptions-=L
     " Keep NERDTree window fixed between multiple toggles
     set winfixwidth
-
+    nmap <C-n> :NERDTreeToggle<cr>
 
     Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
@@ -147,7 +147,7 @@ endif
 if count(g:vimified_packages, 'coding')
     Bundle 'Townk/vim-autoclose'
     Bundle 'majutsushi/tagbar'
-    nmap <leader>t :TagbarToggle<CR>
+    nmap <leader>tb :TagbarToggle<CR>
 
     Bundle 'gregsexton/gitv'
 
@@ -167,6 +167,8 @@ if count(g:vimified_packages, 'coding')
     :vmap <leader>f y:let @/=escape(@", '\\[]$^*.')<CR>:set hls<CR>:silent Ggrep -F "<C-R>=escape(@", '\\"#')<CR>"<CR>:ccl<CR>:cw<CR><CR>
 
     Plugin 'airblade/vim-gitgutter'
+    nmap ]h <Plug>GitGutterNextHunk
+    nmap [h <Plug>GitGutterPrevHunk
 
     Bundle 'scrooloose/syntastic'
     let g:syntastic_enable_signs=1
@@ -189,7 +191,11 @@ if count(g:vimified_packages, 'coding')
         let g:ycm_key_list_select_completion = ['<TAB>']
         let g:ycm_key_list_previous_completion = ['<S-TAB>']
 
-        nnoremap <leader>d :YcmCompleter GoToDefinitionElseDeclaration<CR>
+        nnoremap <leader>de :YcmCompleter GoToDefinitionElseDeclaration<CR>
+        nnoremap <leader>dc :YcmCompleter GoToDeclaration<CR>
+        nnoremap <leader>df :YcmCompleter GoToDefinition<CR>
+        nnoremap <leader>dg :YcmCompleter GoTo<CR>
+        nnoremap <leader>di :YcmCompleter GoToImplementation<CR>
     endif
 
     autocmd FileType gitcommit set tw=68 spell

@@ -149,7 +149,7 @@ eunuch.vim: helpers for UNIX
 
 A tree explorer plugin for vim.
 
-**Command:** `TAB`
+**Command:** `Ctrl-N`
 
 #### [vim-textobj-user](https://github.com/kana/vim-textobj-user)
 
