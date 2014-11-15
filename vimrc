@@ -66,10 +66,8 @@ if count(g:vimified_packages, 'general')
     Bundle 'tsaleh/vim-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
-    Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
-    Bundle 'maxbrunsfeld/vim-yankstack'
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
@@ -88,6 +86,7 @@ if count(g:vimified_packages, 'general')
     nmap <leader>y :YRShow<cr>
 
     Bundle 'mbbill/undotree'
+    nmap <leader>pu :UndotreeToggle<cr>
 
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
@@ -177,8 +176,6 @@ if count(g:vimified_packages, 'coding')
     let g:syntastic_auto_loc_list=1
     let g:syntastic_check_on_wq=0
     let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['c', 'c++', ], 'passive_filetypes': ['html', 'css', 'slim'] }
-
-    " --
 
     Bundle 'vim-scripts/Reindent'
     Bundle 'godlygeek/tabular'

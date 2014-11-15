@@ -124,10 +124,6 @@ endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 
 repeat.vim: enable repeating supported plugin maps with "."
 
-#### [vim-speeddating](https://github.com/tpope/vim-speeddating)
-
-speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
-
 #### [vim-surround](https://github.com/tpope/vim-surround)
 
 surround.vim: quoting/parenthesizing made simple
@@ -136,10 +132,6 @@ surround.vim: quoting/parenthesizing made simple
 
 unimpaired.vim: pairs of handy bracket mappings, very usefull to jump between
 buffers, quickfix list items, etc.
-
-#### [vim-yankstack](https://github.com/maxbrunsfeld/vim-yankstack)
-
-lightweight implementation of emacs' kill ring for vim
 
 #### [vim-eunuch](https://github.com/tpope/vim-eunuch)
 
@@ -158,6 +150,14 @@ Vim plugin: Support for user-defined text objects
 #### [YankRink.vim](https://github.com/vim-scripts/YankRing.vim)
 
 Maintains a history of previous yanks, changes and deletes.
+
+**Command:** `,y`
+
+#### [undotree](https://github.com/mbbill/undotree)
+
+Undo tree like emacs's
+
+**Command:** `,pu`
 
 #### [vim-ident-object](https://github.com/michaeljsmith/vim-indent-object)
 
@@ -232,6 +232,14 @@ A Vim plugin for managing three-way merges.
 #### [vim-fugitive](https://github.com/tpope/vim-fugitive)
 
 fugitive.vim: a Git wrapper so awesome, it should be illegal
+
+#### [git-gutter](https://github.com/airblade/vim-gitgutter)
+
+A Vim plugin which shows a git diff in the 'gutter' (sign column).
+It shows whether each line has been added, modified, and where lines have been removed.
+You can also stage and revert individual hunks.
+
+**Command:** `[h`, `]h`
 
 #### [syntastic](https://github.com/scrooloose/syntastic)
 
