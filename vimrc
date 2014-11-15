@@ -205,11 +205,10 @@ endif
 
 " _. Python {{{
 if count(g:vimified_packages, 'python')
-    Bundle 'python.vim'
-    Bundle 'python_match.vim'
+    Bundle 'ayang/python.vim'
     Bundle 'jmcantrell/vim-virtualenv'
     Bundle 'django.vim'
-    autocmd FileType python setlocal ts=4 sw=4 sta et sts=4 ai
+    autocmd FileType python setlocal ts=4 sw=4 sta et sts=4 ai foldmethod=indent
 endif
 " }}}
 
@@ -235,7 +234,6 @@ endif
 
 " _. Clang {{{
 if count(g:vimified_packages, 'clang')
-    Bundle 'devx/c.vim'
 endif
 " }}}
 
