@@ -197,6 +197,9 @@ if count(g:vimified_packages, 'coding')
         nnoremap <leader>di :YcmCompleter GoToImplementation<CR>
     endif
 
+    Bundle 'thinca/vim-quickrun'
+    map <F8> :QuickRun<cr>
+
     autocmd FileType gitcommit set tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 
@@ -386,6 +389,10 @@ nnoremap <leader>L ^vg_y:execute @@<cr>
 " buffer
 nmap <leader>wq :w!<cr>:Bclose<cr>
 
+autocmd FileType python map <buffer> <F9> :!python %<cr>
+autocmd FileType python map <buffer> <C-F9> :!python %
+autocmd FileType c map <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
+autocmd FileType c++ map <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
 " }}}
 
 " . abbrevs {{{
