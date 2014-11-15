@@ -105,6 +105,8 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
+
+    Bundle 'dhruvasagar/vim-table-mode'
 endif
 " }}}
 
@@ -572,6 +574,8 @@ noremap <C-l>  <C-w>l
 " Easy buffer navigation
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
+noremap <C-TAB> :bnext<cr>
+noremap <S-TAB> :bprevious<cr>
 
 " Splits ,v and ,h to open new splits (vertical and horizontal)
 nnoremap <leader>v <C-w>v<C-w>l
