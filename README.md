@@ -124,6 +124,10 @@ endwise.vim: wisely add "end" in ruby, endfunction/endif/more in vim script, etc
 
 repeat.vim: enable repeating supported plugin maps with "."
 
+#### [vim-speeddating](https://github.com/tpope/vim-speeddating)
+
+speeddating.vim: use CTRL-A/CTRL-X to increment dates, times, and more
+
 #### [vim-surround](https://github.com/tpope/vim-surround)
 
 surround.vim: quoting/parenthesizing made simple
@@ -184,6 +188,38 @@ Plugin to create and use a scratch Vim buffer.
 easybuffer.vim - vim plugin to quickly switch between buffers
 
 **Command** `,be`
+
+#### [Narrow Region](https://github.com/chrisbra/NrrwRgn)
+
+> A Vim plugin for focussing on a selected region
+
+This plugin is inspired by the [Narrowing feature of Emacs](http://www.emacswiki.org/emacs/Narrowing) and means to focus on a selected region while making the rest inaccessible. You simply select the region, call `:NR` and the selected part will open in a new split window while the rest of the buffer will be protected. Once you are finished, simply write the narrowed window (`:w`) and all the changes will be moved back to the original buffer.
+
+Once installed, take a look at the help at `:h NrrwRgn`
+
+### Orgmode
+
+#### [vim-orgmode](https://github.com/jceb/vim-orgmode)
+
+Text outlining and task management for Vim based on Emacs’ Org-Mode.
+
+#### [SyntaxRange](https://github.com/vim-scripts/SyntaxRange)
+
+Use proper syntax highlighting for code blocks such as:
+
+    #+BEGIN_SRC cpp
+    int i = 1;
+    #+END_SRC
+
+#### [Universal Text Linking](https://github.com/vim-scripts/utl.vim)
+
+general support for text linking. The hyperlinks feature of vim-orgmode depends on this plugin.
+
+#### [Vim Table Mode](https://github.com/dhruvasagar/vim-table-mode)
+
+An awesome automatic table creator & formatter allowing one to create neat tables as you type.
+
+**Command** `,tm` to activate table mode
 
 ### Fancy
 
@@ -345,13 +381,9 @@ Vim configuration files for Elixir.
 
 ### Python
 
-#### [python-mode](https://github.com/klen/python-mode)
+#### [python.vim](https://github.com/ayang/python.vim)
 
-Python-mode is a vim plugin that allows you to use the pylint, rope, pydoc,
-
-pyflakes, pep8, mccabe libraries in vim to provide features like python code
-
-looking for bugs, refactoring and some other useful things.
+A fork of [python.vim](https://github.com/vim-scripts/python.vim), menus are removed and bindings changed.
 
 #### [django.vim](https://github.com/vim-scripts/django.vim)
 
@@ -362,6 +394,7 @@ Django sytax supports
 Support for go is now available:
 
 #### [vim-go](https://github.com/fatih/vim-go)
+
 Full featured Go (golang) support for Vim. vim-go installs automatically all
 necessary binaries for providing seamless Vim integration . It comes with
 pre-defined sensible settings (like auto gofmt on save), has autocomplete,

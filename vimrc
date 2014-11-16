@@ -66,14 +66,13 @@ if count(g:vimified_packages, 'general')
     Bundle 'tsaleh/vim-align'
     Bundle 'tpope/vim-endwise'
     Bundle 'tpope/vim-repeat'
+    Bundle 'tpope/vim-speeddating'
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'tpope/vim-eunuch'
 
     Bundle 'scrooloose/nerdtree'
-    " Disable the scrollbars (NERDTree)
-    set guioptions-=r
-    set guioptions-=L
+    let NERDTreeHijackNetrw = 0
     " Keep NERDTree window fixed between multiple toggles
     set winfixwidth
     nmap <C-n> :NERDTreeToggle<cr>
@@ -105,6 +104,15 @@ if count(g:vimified_packages, 'general')
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
 
+    Bundle 'chrisbra/NrrwRgn'
+endif
+" }}}
+
+" _. Orgmode {{{
+if count(g:vimified_packages, 'orgmode')
+    Bundle 'jceb/vim-orgmode'
+    Bundle 'vim-scripts/utl.vim'
+    Bundle 'vim-scripts/SyntaxRange'
     Bundle 'dhruvasagar/vim-table-mode'
 endif
 " }}}
@@ -419,6 +427,8 @@ set nolazyredraw
 
 " Disable the macvim toolbar
 set guioptions-=T
+set guioptions-=r
+set guioptions-=L
 
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮,trail:␣
 set showbreak=↪
