@@ -483,7 +483,7 @@ if exists('+colorcolumn')
 endif
 " }}}
 
-set visualbell
+" set visualbell
 
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.pyc,*.pyo,*.swp,*.jpg,*.png,*.xpm,*.gif,.DS_Store,*.aux,*.out,*.toc,tmp,*.scssc
 set wildmenu
@@ -492,6 +492,8 @@ set dictionary=/usr/share/dict/words
 
 " Disable input method in normal mode.
 set noimd
+set iminsert=0
+set imsearch=0
 
 " }}}
 
