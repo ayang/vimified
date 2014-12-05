@@ -1,6 +1,11 @@
 " If you are using linux and fcitx, add this line into after.vimrc
 " source ~/.vim/functions/fix_fcitx.vim
 
+if exists('loaded_fix_fcitx') || &cp
+  finish
+endif
+let loaded_fix_fcitx = 1
+
 let w:insert_input_active = 0
 
 function FcitxLeaveInsert()

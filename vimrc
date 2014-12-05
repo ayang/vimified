@@ -188,7 +188,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'vim-scripts/Reindent'
     Bundle 'godlygeek/tabular'
 
-    if !exists("g:no_ycm") || !g:no_ycm
+    if v:version >= 704 && (!exists("g:no_ycm") || !g:no_ycm)
         Bundle 'Valloric/YouCompleteMe'
         let g:ycm_autoclose_preview_window_after_completion=1
         let g:ycm_min_num_of_chars_for_completion = 3
@@ -311,6 +311,12 @@ endif
 " _. Rust {{{
 if count(g:vimified_packages, 'rust')
     Bundle 'wting/rust.vim'
+endif
+" }}}
+
+" _. Qt {{{
+if count(g:vimified_packages, 'qt')
+    Bundle 'peterhoeg/vim-qml'
 endif
 " }}}
 
