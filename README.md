@@ -22,10 +22,8 @@ Copy/Paste this line in your CLI:
 Grab the project:
 
     cd
-    git clone git://github.com/ayang/vimified.git
-    ln -sfn vimified ~/.vim
-    ln -sfn vimified/vimrc ~/.vimrc
-    cd vimified
+    git clone git://github.com/ayang/vimified.git .vim
+    cd .vim
 
 Create required directories:
 
