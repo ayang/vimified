@@ -8,7 +8,7 @@ let loaded_fix_fcitx = 1
 
 let w:insert_input_active = 0
 
-function FcitxLeaveInsert()
+function! FcitxLeaveInsert()
     let s:input_status = system("fcitx-remote")
     if s:input_status == 2
         let w:insert_input_active = 1
@@ -16,7 +16,7 @@ function FcitxLeaveInsert()
     endif
 endfunction
 
-function FcitxEnterInsert()
+function! FcitxEnterInsert()
     if !exists("w:insert_input_active")
         let w:insert_input_active = 0
     endif
