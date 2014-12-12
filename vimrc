@@ -465,9 +465,6 @@ endif
 set numberwidth=3
 set winwidth=83
 set ruler
-if executable('zsh')
-  set shell=zsh\ -l
-endif
 set showcmd
 
 set exrc
