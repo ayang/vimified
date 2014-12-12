@@ -208,7 +208,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'thinca/vim-quickrun'
     map <F8> :QuickRun<cr>
 
-    autocmd FileType gitcommit set tw=68 spell
+    autocmd FileType gitcommit setl tw=68 spell
     autocmd FileType gitcommit setlocal foldmethod=manual
 
 endif
@@ -237,7 +237,7 @@ if count(g:vimified_packages, 'ruby')
     Bundle 'nelstrom/vim-textobj-rubyblock'
     Bundle 'ecomba/vim-ruby-refactoring'
 
-    autocmd FileType ruby,eruby,yaml set tw=80 ai sw=2 sts=2 et
+    autocmd FileType ruby,eruby,yaml setl tw=80 ai sw=2 sts=2 et
     autocmd FileType ruby,eruby,yaml setlocal foldmethod=manual
     autocmd User Rails set tabstop=2 shiftwidth=2 softtabstop=2 expandtab
 endif
@@ -259,7 +259,7 @@ if count(g:vimified_packages, 'html')
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.slim setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+    autocmd BufNewFile,BufReadPost *.md setl filetype=markdown
 endif
 " }}}
 
@@ -406,8 +406,8 @@ nmap <leader>wq :w!<cr>:Bclose<cr>
 
 autocmd FileType python map <buffer> <F9> :!python %<cr>
 autocmd FileType python map <buffer> <C-F9> :!python %
-autocmd FileType c map <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
-autocmd FileType c++ map <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
+autocmd FileType c map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
+autocmd FileType c++ map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
 " }}}
 
 " . abbrevs {{{
@@ -506,7 +506,7 @@ set imsearch=0
 au FocusLost    * :silent! wall
 "
 " When vimrc is edited, reload it
-autocmd! BufWritePost vimrc source ~/.vimrc
+autocmd! BufWritePost vimrc source %
 
 " }}}
 
