@@ -259,7 +259,7 @@ if count(g:vimified_packages, 'html')
     au BufNewFile,BufReadPost *.jade setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.html setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
     au BufNewFile,BufReadPost *.slim setl shiftwidth=2 tabstop=2 softtabstop=2 expandtab
-    autocmd BufNewFile,BufReadPost *.md setl filetype=markdown
+    au BufNewFile,BufReadPost *.md setl filetype=markdown
 endif
 " }}}
 
@@ -408,6 +408,8 @@ autocmd FileType python map <buffer> <F9> :!python %<cr>
 autocmd FileType python map <buffer> <C-F9> :!python %
 autocmd FileType c map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
 autocmd FileType c++ map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
+autocmd FileType go map <buffer> <F9> <Plug>(go-run)
+autocmd FileType go map <buffer> <C-F9> <Plug>(go-build)
 " }}}
 
 " . abbrevs {{{
