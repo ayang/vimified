@@ -70,12 +70,13 @@ if count(g:vimified_packages, 'general')
     Bundle 'tpope/vim-surround'
     Bundle 'tpope/vim-unimpaired'
     Bundle 'tpope/vim-eunuch'
+    Bundle 'terryma/vim-multiple-cursors'
 
     Bundle 'scrooloose/nerdtree'
     let NERDTreeHijackNetrw = 0
     " Keep NERDTree window fixed between multiple toggles
     set winfixwidth
-    nmap <C-n> :NERDTreeToggle<cr>
+    nmap <leader>nt :NERDTreeToggle<cr>
 
     Bundle 'kana/vim-textobj-user'
     Bundle 'vim-scripts/YankRing.vim'
@@ -85,15 +86,17 @@ if count(g:vimified_packages, 'general')
     nmap <leader>y :YRShow<cr>
 
     Bundle 'mbbill/undotree'
-    nmap <leader>pu :UndotreeToggle<cr>
+    nmap <leader>nd :UndotreeToggle<cr>
 
     Bundle 'michaeljsmith/vim-indent-object'
     let g:indentobject_meaningful_indentation = ["haml", "sass", "python", "yaml", "markdown"]
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
-    let g:ctrlp_working_path_mode = ''
+    let g:ctrlp_cmd = 'CtrlPMixed'
+    let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = '\v\.(pyc)$'
+    let g:ctrlp_extensions = ['funky']
     Bundle 'tacahiroy/ctrlp-funky'
     nmap <leader>pb :CtrlPBuffer<CR>
     nmap <leader>pm :CtrlPMRU<CR>
@@ -595,7 +598,7 @@ noremap <C-l>  <C-w>l
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
 noremap <C-TAB> :bnext<cr>
-noremap <S-TAB> :bprevious<cr>
+noremap <C-S-TAB> :bprevious<cr>
 
 " Splits ,v and ,h to open new splits (vertical and horizontal)
 nnoremap <leader>v <C-w>v<C-w>l
