@@ -122,9 +122,6 @@ endif
 
 " _. Fancy {{{
 if count(g:vimified_packages, 'fancy')
-    call g:Check_defined('g:airline_left_sep', '')
-    call g:Check_defined('g:airline_right_sep', '')
-    call g:Check_defined('g:airline_branch_prefix', '')
 
     Bundle 'bling/vim-airline'
     Bundle 'bling/vim-bufferline'
