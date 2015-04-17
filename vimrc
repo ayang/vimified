@@ -94,7 +94,7 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'Spaceghost/vim-matchit'
     Bundle 'kien/ctrlp.vim'
-    let g:ctrlp_cmd = 'CtrlPMixed'
+    let g:ctrlp_cmd = 'CtrlP'
     let g:ctrlp_working_path_mode = 'ra'
     let g:ctrlp_custom_ignore = '\v\.(pyc)$'
     let g:ctrlp_extensions = ['funky']
@@ -107,6 +107,7 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'troydm/easybuffer.vim'
     nmap <leader>be :EasyBufferToggle<enter>
+    map <C-TAB> :EasyBufferToggle<enter>
 
     Bundle 'chrisbra/NrrwRgn'
 endif
@@ -595,8 +596,6 @@ noremap <C-l>  <C-w>l
 " Easy buffer navigation
 noremap <leader>bp :bprevious<cr>
 noremap <leader>bn :bnext<cr>
-noremap <C-TAB> :bnext<cr>
-noremap <C-S-TAB> :bprevious<cr>
 
 " Splits ,v and ,h to open new splits (vertical and horizontal)
 nnoremap <leader>v <C-w>v<C-w>l
@@ -638,6 +637,7 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>es :e ~/.vim/snippets/<cr>
 nnoremap <leader>eg :e ~/.gitconfig<cr>
 nnoremap <leader>ez :e ~/.zshrc<cr>
+nnoremap <leader>eb :e ~/.bashrc<cr>
 nnoremap <leader>et :e ~/.tmux.conf<cr>
 
 " --------------------
