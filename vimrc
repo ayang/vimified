@@ -74,6 +74,7 @@ if count(g:vimified_packages, 'general')
 
     Bundle 'scrooloose/nerdtree'
     let NERDTreeHijackNetrw = 0
+    let NERDTreeIgnore = ['\.pyc', '\~$']
     " Keep NERDTree window fixed between multiple toggles
     set winfixwidth
     nmap <leader>nt :NERDTreeToggle<cr>
