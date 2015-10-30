@@ -408,6 +408,8 @@ nmap <leader>wq :w!<cr>:Bclose<cr>
 
 autocmd FileType python map <buffer> <F9> :!python %<cr>
 autocmd FileType python map <buffer> <C-F9> :!python %
+autocmd FileType perl map <buffer> <F9> :!perl %<cr>
+autocmd FileType perl map <buffer> <C-F9> :!perl %
 autocmd FileType c map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
 autocmd FileType c++ map <buffer> <F9> :w<CR>:!gcc % -o %< && ./%<<CR>
 autocmd FileType go map <buffer> <F9> <Plug>(go-run)
