@@ -190,7 +190,7 @@ if count(g:vimified_packages, 'coding')
     Bundle 'vim-scripts/Reindent'
     Bundle 'godlygeek/tabular'
 
-    if v:version >= 704 && (!exists("g:no_ycm") || !g:no_ycm)
+    if v:version >= 704 && !exists('g:no_ycm')
         Bundle 'Valloric/YouCompleteMe'
         let g:ycm_autoclose_preview_window_after_completion=1
         let g:ycm_min_num_of_chars_for_completion = 3
@@ -379,7 +379,6 @@ nnoremap <leader>po "*p
 noremap <silent><Leader>/ :nohls<CR>
 
 " better ESC
-inoremap <C-k> <Esc>
 inoremap jj <Esc>
 
 nmap <silent> <leader>hh :set invhlsearch<CR>
@@ -583,12 +582,6 @@ nnoremap <silent> <leader>h3 :execute '3match InterestingWord3 /\<<c-r><c-w>\>/'
 
 " Navigation & UI {{{
 
-" more natural movement with wrap on
-nnoremap j gj
-nnoremap k gk
-vnoremap j gj
-vnoremap k gk
-
 " Easy splitted window navigation
 noremap <C-h>  <C-w>h
 noremap <C-j>  <C-w>j
@@ -690,16 +683,6 @@ source ~/.vim/functions/my_fold_text.vim
 " Requires the gist command line too (brew install gist)
 vnoremap <leader>G :w !gist -p -t %:e \| pbcopy<cr>
 " }}}
-
-" }}}
-
-" TEXT OBJECTS {{{
-
-" Shortcut for [] motion
-onoremap ir i[
-onoremap ar a[
-vnoremap ir i[
-vnoremap ar a[
 
 " }}}
 
