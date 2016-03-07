@@ -1,15 +1,16 @@
 #!/usr/env sh
 
-INSTALLDIR=${INSTALLDIR:-"$PWD/.vim"}
+INSTALLDIR=${INSTALLDIR:-"~/.vim"}
+
+create_symlinks () {
+    echo "If vim version < 7.4, .vimrc is needed. Else you can just remove it."
+    if [ ! -f ~/.vimrc ]; then
+        ln -sfn $INSTALLDIR/vimrc ~/.vimrc
+    fi
+}
 
 echo "Welcome friend!"
 echo "You are about to be vimified. Ready? Let us do the stuff for you."
-
-which git > /dev/null
-if [ "$?" != "0" ]; then
-  echo "You need git installed to install vimified."
-  exit 1
-fi
 
 which vim > /dev/null
 if [ "$?" != "0" ]; then
@@ -26,6 +27,7 @@ else
     echo "Seems like you already are one of ours, so let's update Vimified to be as awesome as possible."
     cd $INSTALLDIR
     git pull origin master
+    create_symlinks
 fi
 
 if [ ! -d "bundle" ]; then
@@ -49,6 +51,7 @@ echo "From now, do not hesitate to ask for help to the people behind Vimfied: ht
 echo "We welcome any bros/sistas who want to contribute: https://github.com/zaiste/vimified#call-for-help"
 echo "Report any issue/need: https://github.com/zaiste/vimified/issues"
 echo "At last, and before all, read the documentation: http://zaiste.github.com/vimified/"
+echo "Please run this command to install YouCompleteMe: .vim/bundle/YouCompleteMe/install.sh"
 
 echo "Enjoy!"
 
