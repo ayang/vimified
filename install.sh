@@ -1,6 +1,6 @@
 #!/usr/env sh
 
-INSTALLDIR=${INSTALLDIR:-"~/.vim"}
+INSTALLDIR=${INSTALLDIR:-".vim"}
 
 create_symlinks () {
     echo "If vim version < 7.4, .vimrc is needed. Else you can just remove it."
