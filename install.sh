@@ -27,8 +27,9 @@ else
     echo "Seems like you already are one of ours, so let's update Vimified to be as awesome as possible."
     cd $INSTALLDIR
     git pull origin master
-    create_symlinks
 fi
+
+create_symlinks
 
 if [ ! -d "bundle" ]; then
     echo "Now, we will create a separate directory to store the bundles Vim will use."
